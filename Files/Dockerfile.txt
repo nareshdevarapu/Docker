@@ -1,0 +1,8 @@
+FROM ubuntu:latest
+RUN apt-get update
+RUN apt-get install -y nginx vim
+WORKDIR  /var/www/html/
+RUN rm *
+RUN echo "<H1> Wow my website is already up and running !! </H1> " > index.html
+CMD /usr/sbin/nginx -g "daemon off;"
+EXPOSE 80

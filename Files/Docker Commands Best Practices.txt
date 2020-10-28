@@ -1,0 +1,71 @@
+#To find out the docker is running on your pc and its running version information
+$docker version
+
+#Docker install directory
+$ls -la /var/lib/docker
+
+#To see the docker running status
+$service docker status
+
+#To stop the running docker client
+$service docker stop
+
+#To start the stopped docker client
+$service docker start
+
+#To see the list of images on your local repository
+$docker images
+
+#To see the list of running containers
+$docker ps
+
+#To pull the images from the dockerhub registry
+$docker pull <image-name>:<tag-name>
+
+#To run the docker image
+$docker run -d -P <image-name>:<tag-name>
+
+#To enter into the container
+$docker exec -it <container-id> bash
+
+#To remove all docker containers
+$docker rm -f `docker ps -aq`
+
+#To exit from container without stopping it
+ctrl+pq
+
+#To inspect the docker image or container
+$docker inspect <container-id>
+
+#To see the docker container memory/cpu utilizations information
+$docker stats
+$docker top <container-id>
+
+#To see the docker logs
+$docker logs <container-id>
+
+#docker container commit post making the changes
+$ docker commit -m "custom-nginx" f287dba91d7c nginx:custom
+
+#
+$docker run -d -P nginx:v1
+
+#To remove all docker containers
+$docker rm -f `docker ps -aq`
+
+#Docker Swarm
+
+$docker swarm init
+
+$docker node ls
+
+$docker service create --name nginx-web -p 80:80 nginx
+
+$docker service ls
+
+$docker service ps nginx
+
+$docker service scale nginx=5
+
+#command to uninstall the docker
+sudo apt-get purge docker-ce docker-ce-cli containerd.io

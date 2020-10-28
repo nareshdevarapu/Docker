@@ -1,0 +1,11 @@
+FROM oraclelinux:8
+RUN yum update
+RUN yum install -y nginx vim
+WORKDIR  /usr/share/nginx/html/
+COPY index.html .
+CMD /usr/sbin/nginx -g "daemon off;"
+EXPOSE 80
+
+
+
+##docker commit -m "deployed nginx web server on ol" -c 'CMD /usr/sbin/nginx -g "daemon off;"' -c 'EXPOSE 80'  ngcc-web-ol:v1

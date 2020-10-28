@@ -1,0 +1,1 @@
+sudo apt-get purge docker-ce docker-ce-cli containerd.io
